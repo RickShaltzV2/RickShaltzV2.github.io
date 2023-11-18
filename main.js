@@ -12,7 +12,6 @@ var windowWidth = window.windowWidth;
 var windowHeight = window.windowHeight;
 // window.windowResized = windowResized
 window.mouseClicked = mouseClicked
-window.preload = preload
 // window.keyPressed = keyPressed
 
 function setup() {
