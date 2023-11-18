@@ -1,3 +1,4 @@
+import { WINDOWWIDTH } from "../../../assets/windowWidth.js";
 import { TextLabel } from "../../TextLabel.js";
 import { TextLabelBox } from "../../TextLabelBox.js";
 import { ButtonBoxExpansion } from "../ButtonBoxExpansion.js";
@@ -12,7 +13,7 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
         var text = "About the central Publicity Department: they do a lot of stuff!"
 
         var button_text = new TextLabel(x, y, entity_name, 20, "Arial", "black");
-        var explanation_text = new TextLabelBox(new TextLabel(0, windowWidth/10, 
+        var explanation_text = new TextLabelBox(new TextLabel(0, WINDOWWIDTH/10, 
         text , 15, "Arial", "black"), "rectangle", "white");
         
         var expanded_box = new ExpandedBox("white", graph, explanation_text)
@@ -35,16 +36,16 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
             
         ]
 
-        this.expanded_box.buttons.push(new GraphButton(271,257.5 - 90,660,25, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(85.5,296.5- 90,291,29, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(81.5,334- 90,273,28, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(37,376- 90,178,28, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(29,413.5- 90,168,25, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(12.5,450.5- 90,139,25, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(11.5,489- 90,131,32, this.expanded_box,data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(7,531- 90,120,28, this.expanded_box,data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(-3.5,568.5- 90,99,25, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(-8.5,603.5- 90,91,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(271,257.5 - 120,660,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(85.5,296.5- 120,291,29, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(81.5,334- 120,273,28, this.expanded_box, data,this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(37,376- 120,178,28, this.expanded_box, data,this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(29,413.5- 120,168,25, this.expanded_box, data,this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(12.5,450.5- 120,139,25, this.expanded_box, data,this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(11.5,489- 120,131,32, this.expanded_box,data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(7,531- 120,120,28, this.expanded_box,data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(-3.5,568.5- 120,99,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(-8.5,603.5- 110,91,25, this.expanded_box, data, this.expanded_box.buttons.length))
         
     }
 }

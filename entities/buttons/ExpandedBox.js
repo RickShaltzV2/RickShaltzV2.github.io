@@ -1,3 +1,4 @@
+import { WINDOWHEIGHT, WINDOWWIDTH } from "../../assets/windowWidth.js";
 import { Entity } from "../Entity.js";
 import { WorldMap } from "../Map.js";
 import { TextLabel } from "../TextLabel.js";
@@ -7,7 +8,7 @@ import { GraphButton } from "./GraphButton.js";
 
 export class ExpandedBox extends Entity {
     constructor (color, graph_img, text_label_box) {
-        super(windowWidth/2, - windowHeight/2 - 100, 9*windowWidth/10, 9*windowHeight/10)
+        super(WINDOWWIDTH/2, - WINDOWHEIGHT/2 - 100, 9*WINDOWWIDTH/10, 9*WINDOWHEIGHT/10)
         this.color = color
 
         if (graph_img != null) {
@@ -24,13 +25,13 @@ export class ExpandedBox extends Entity {
         this.buttons = [new CloseButton(new TextLabel(this.length/2 - 40, -this.width/2 + 40, "X", 40, "Arial", "black"),"rectangle", "white", 50, 50, this)]
 
         this.title = null
-        this.map = new WorldMap(windowWidth/2 - 600, windowHeight/2 - 100, 0, 0);
+        this.map = new WorldMap(WINDOWWIDTH/2 - 600, WINDOWHEIGHT/2 - 100, 0, 0);
     }
 
     draw () {
-        if (this.triggered && this.y < windowHeight/2) {
+        if (this.triggered && this.y < WINDOWHEIGHT/2) {
             this.y += 30;
-        } else if (this.triggered && this.y > windowHeight/2) {
+        } else if (this.triggered && this.y > WINDOWHEIGHT/2) {
             this.map.fade_in()
         }
         
@@ -47,7 +48,7 @@ export class ExpandedBox extends Entity {
 
         if (this.triggered) {
             fill("rgba(30, 30, 30, 0.5)")
-            rect(windowWidth/2, windowHeight/2, windowWidth, windowHeight)
+            rect(WINDOWWIDTH/2, WINDOWHEIGHT/2, WINDOWWIDTH, WINDOWHEIGHT)
         }
 
         fill(this.color);

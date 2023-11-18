@@ -1,5 +1,6 @@
 import { Entity } from "./Entity.js";
 import { country } from "../assets/countries.js";
+import { WINDOWHEIGHT, WINDOWWIDTH } from "../assets/windowWidth.js";
 
 export class WorldMap extends Entity {
     constructor (x, y, length, width) {
@@ -116,8 +117,8 @@ export class WorldMap extends Entity {
         strokeWeight(0)
 
         if (this.follower_count != null) {
-            var x_pos = this.x + windowWidth/8;
-            var y_pos = this.y + windowHeight/5;
+            var x_pos = this.x + WINDOWWIDTH/8;
+            var y_pos = this.y + WINDOWHEIGHT/5;
 
             fill("black")
             textSize(30)

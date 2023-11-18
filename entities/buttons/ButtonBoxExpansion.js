@@ -1,3 +1,4 @@
+import { WINDOWHEIGHT, WINDOWWIDTH } from "../../assets/windowWidth.js";
 import { Button } from "./Button.js";
 
 export class ButtonBoxExpansion extends Button {
@@ -16,10 +17,10 @@ export class ButtonBoxExpansion extends Button {
 
     draw() {
         if (this.preview_image != null && this.contains(mouseX, mouseY)){
-            this.preview_image.resize(0, windowHeight/3)
+            this.preview_image.resize(0, WINDOWHEIGHT/3)
             fill ("black")
-            rect(windowWidth/2, windowHeight/2, this.preview_image.width + 5, this.preview_image.height + 5)
-            image(this.preview_image, windowWidth/2, windowHeight/2)
+            rect(WINDOWWIDTH/2, WINDOWHEIGHT/2, this.preview_image.width + 5, this.preview_image.height + 5)
+            image(this.preview_image, WINDOWWIDTH/2, WINDOWHEIGHT/2)
 
         }
         super.draw()
