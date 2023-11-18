@@ -14,12 +14,6 @@ var windowHeight = window.windowHeight;
 window.mouseClicked = mouseClicked
 window.preload = preload
 // window.keyPressed = keyPressed
-var inconsolata;
-
-
-function preload() {
-  inconsolata = loadFont('assets/inconsolata-Medium.ttf');
-}
 
 function setup() {
   windowWidth = window.windowWidth;
