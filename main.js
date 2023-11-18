@@ -1,7 +1,9 @@
+import { WorldMap } from "./entities/Map.js";
 import { TextLabel } from "./entities/TextLabel.js";
 import { TextLabelBox } from "./entities/TextLabelBox.js";
 import { Button } from "./entities/buttons/Button.js";
 import { ButtonBoxExpansion } from "./entities/buttons/ButtonBoxExpansion.js";
+import { CentralPublicityDepartment } from "./entities/buttons/EntitySpecificButtons/CentralPublicityDepartment.js";
 import { ExpandedBox } from "./entities/buttons/ExpandedBox.js";
 
 
@@ -29,9 +31,7 @@ function setup() {
   "This is a truly insightful bar plot because it really shows how much influence they have in the anglosphere.",
   null, windowWidth/2, 5*windowHeight/6, "assets/ministry_of_foreign_affairs.jpg")
 
-  add_info_button("Central Publicity Department", 
-  "About the central Publicity Department: they do a lot of stuff!",
-  null, windowWidth/2 - 400, 5*windowHeight/6, "assets/central_publicity_department.jpg")
+  buttons.push(new CentralPublicityDepartment(windowWidth/2 - 400, 5*windowHeight/6, 300, 60))
 
   add_info_button("State Council", 
   "The state council controls everything.",
@@ -46,6 +46,7 @@ function setup() {
 var test_text_box;
 var buttons = [];
 var top_button = null;
+var test_map = new WorldMap(0, 0, 0, 0)
 
 function draw () {
   background(150)
@@ -63,9 +64,14 @@ function draw () {
     }
   }
 
+  // test_map.draw()
+
   if (overlap_draw != null)
     overlap_draw.draw()
 }
+
+// dev tools
+var first_clicked;
 
 function mouseClicked () {
   if (top_button == null){
@@ -75,6 +81,13 @@ function mouseClicked () {
   } else {
     top_button.clicked(mouseX, mouseY)
   }
+
+  // if (first_clicked == null) {
+  //   first_clicked = {x: mouseX, y: mouseY}
+  // } else {
+  //   console.log("this.expanded_box.buttons.push(new GraphButton(" + ((first_clicked.x + mouseX)/2 - 1000) + "," + ((first_clicked.y + mouseY)/2) + "," + (mouseX - first_clicked.x) + "," + (mouseY - first_clicked.y) + ", this.expanded_box))")
+  //   first_clicked = null
+  // }
   
 }
 

@@ -1,14 +1,21 @@
 import { Entity } from "../Entity.js";
+import { WorldMap } from "../Map.js";
 import { TextLabel } from "../TextLabel.js";
 import { TextLabelBox } from "../TextLabelBox.js";
 import { CloseButton } from "./CloseButton.js";
+import { GraphButton } from "./GraphButton.js";
 
 export class ExpandedBox extends Entity {
     constructor (color, graph_img, text_label_box) {
-        super(windowWidth/2, - windowWidth/2 - 10, 9*windowWidth/10, 9*windowHeight/10)
+        super(windowWidth/2, - windowHeight/2 - 100, 9*windowWidth/10, 9*windowHeight/10)
         this.color = color
 
-        this.graph_img = loadImage("assets/sample_graph.png")
+        if (graph_img != null) {
+            this.graph_img = loadImage(graph_img)
+        } else {
+            this.graph_img = loadImage("assets/sample_graph.png")
+        }
+
         this.text_label_box = text_label_box;
 
         this.triggered = false
@@ -17,15 +24,19 @@ export class ExpandedBox extends Entity {
         this.buttons = [new CloseButton(new TextLabel(this.length/2 - 40, -this.width/2 + 40, "X", 40, "Arial", "black"),"rectangle", "white", 50, 50, this)]
 
         this.title = null
+        this.map = new WorldMap(windowWidth/2 - 600, windowHeight/2 - 100, 0, 0);
     }
 
     draw () {
         if (this.triggered && this.y < windowHeight/2) {
             this.y += 30;
+        } else if (this.triggered && this.y > windowHeight/2) {
+            this.map.fade_in()
         }
         
         if (!this.triggered && this.y > - this.width - 10) {
             this.y -= 30;
+            this.map.fade_out()
         } else if (!this.triggered && this.y <= - this.width - 10) {
             this.visible = false
         }
@@ -42,7 +53,8 @@ export class ExpandedBox extends Entity {
         fill(this.color);
         rect(this.x, this.y, this.length, this.width)
         
-        image(this.graph_img, this.x, this.y - windowWidth/10, 400, 300);
+        this.graph_img.resize(0, 500)
+        image(this.graph_img, this.x + 400, this.y - 150);
         
         this.text_label_box.draw(0, this.x, this.y);
 
@@ -51,6 +63,8 @@ export class ExpandedBox extends Entity {
         }
 
         this.title.draw(0, this.x, this.y);
+
+        this.map.draw()
     }
 
     trigger () {
@@ -72,5 +86,9 @@ export class ExpandedBox extends Entity {
         this.title = new TextLabelBox(new TextLabel(0, -this.width/2, text_label_box.textLabel.text,
         text_label_box.textLabel.text_size, text_label_box.textLabel.font, text_label_box.textLabel.color), 
         "rectangle", "white", text_label_box.length, text_label_box.width);
+    }
+
+    set_region_focus(region, value) {
+        this.map.set_region_focus(region, value)
     }
 }

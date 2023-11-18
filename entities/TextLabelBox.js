@@ -2,13 +2,17 @@ import { Entity } from "./Entity.js";
 
 export class TextLabelBox extends Entity {
     constructor(textLabel, shape, color, length, width) {
-        super(textLabel.x, textLabel.y, length, width)
+        if (textLabel != null){
+            super(textLabel.x, textLabel.y, length, width)
+        } else {
+            super(0, 0, length, width)
+        }
         this.shape = shape;
         this.color = color;
         this.textLabel = textLabel;
 
 
-        if (length == null) {
+        if (length == null && textLabel != null) {
             textSize (textLabel.text_size);
             this.length = textWidth(textLabel.text) + 50
             this.width = textAscent(textLabel.text) + 50
@@ -41,7 +45,8 @@ export class TextLabelBox extends Entity {
 
         strokeWeight(0);
 
-        this.textLabel.draw(x_offset, y_offset)
+        if (this.textLabel != null)
+            this.textLabel.draw(x_offset, y_offset)
     }
 
     set_pos(x, y) {
