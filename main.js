@@ -11,6 +11,7 @@ import { MinistryOfForeignAffairs } from "./entities/buttons/EntitySpecificButto
 import { StateCouncil } from "./entities/buttons/EntitySpecificButtons/StateCouncil.js";
 import { ComitteeCcp } from "./entities/buttons/EntitySpecificButtons/ComitteeCcp.js";
 import { FloatingRectangle } from "./entities/BackgroundRectangle.js";
+import { ComparingToEachOther } from "./entities/buttons/EntitySpecificButtons/ComparingToEachOther.js";
 // This will fix the module problem
 window.setup = setup;
 window.draw = draw;
@@ -41,8 +42,8 @@ function setup() {
   var test_text_box = new TextLabelBox(test_text, "rectangloid", "orange");
   labels.push(test_text_box)
 
-  add_info_button("Against Each Other", "This is comparing it against each other", null, WINDOWWIDTH - 300, 380)
-  add_info_button("Against Domestic Influences", "This is comparing it against domestic influences like BBC and CNN", null, WINDOWWIDTH - 300, 450)
+  buttons.push(new ComparingToEachOther(WINDOWWIDTH - 300, 380, 300, 60))
+  add_info_button("Against Anglosphere Influences", "This is comparing it against domestic influences like BBC and CNN", null, WINDOWWIDTH - 300, 450)
   
   for (var i = 0; i < 20; i ++) {
     background_rect.push(new FloatingRectangle(randint(0, WINDOWWIDTH), randint(0, WINDOWHEIGHT + 200), randint(50, 100), randint(200, 400), "rgba(255, 51, 51, 0.4)", randint(-3, -1)))

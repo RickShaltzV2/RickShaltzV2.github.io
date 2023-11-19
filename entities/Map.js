@@ -118,10 +118,10 @@ export class WorldMap extends Entity {
 
         if (this.follower_count != null) {
             var x_pos = this.x + WINDOWWIDTH/8;
-            var y_pos = this.y + WINDOWHEIGHT/5;
+            var y_pos = this.y + WINDOWHEIGHT/5 - 40;
 
             fill("black")
-            textSize(30)
+            textSize(20)
             text(this.highlighted_region + " Follower Count: " + this.follower_count, x_pos, y_pos);
         }
     }
