@@ -54,7 +54,7 @@ export class ExpandedBox extends Entity {
         fill(this.color);
         rect(this.x, this.y, this.length, this.width)
         
-        this.graph_img.resize(0, 500)
+        this.graph_img.resize(0, 400)
         image(this.graph_img, this.x + 400, this.y - 150);
         
         this.text_label_box.draw(0, this.x, this.y);

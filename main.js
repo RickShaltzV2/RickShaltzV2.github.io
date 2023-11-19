@@ -7,6 +7,9 @@ import { CentralPublicityDepartment } from "./entities/buttons/EntitySpecificBut
 import { ExpandedBox } from "./entities/buttons/ExpandedBox.js";
 import { WINDOWHEIGHT } from "./assets/windowWidth.js";
 import { WINDOWWIDTH } from "./assets/windowWidth.js";
+import { MinistryOfForeignAffairs } from "./entities/buttons/EntitySpecificButtons/MinistryOfForeignAffairs.js";
+import { StateCouncil } from "./entities/buttons/EntitySpecificButtons/StateCouncil.js";
+import { ComitteeCcp } from "./entities/buttons/EntitySpecificButtons/ComitteeCcp.js";
 // This will fix the module problem
 window.setup = setup;
 window.draw = draw;
@@ -16,22 +19,19 @@ window.mouseClicked = mouseClicked
 
 function setup() {
   var cnv = createCanvas(WINDOWWIDTH, WINDOWHEIGHT);
-  var x = (WINDOWWIDTH - width) / 2;
-  var y = (WINDOWHEIGHT - height) / 2;
+  var x = (windowWidth - WINDOWWIDTH) / 2;
+  var y = (windowHeight - WINDOWHEIGHT) / 2;
   cnv.position(x, y);
 
   var test_text = new TextLabel(WINDOWWIDTH/2, 100, "Data Interference Of Foreign Entities", 50, "Georgia", "black");
   test_text_box = new TextLabelBox(test_text, "rectangloid", "white");
 
-  add_info_button("Ministry of Foreign Affairs", 
-  "This is a truly insightful bar plot because it really shows how much influence they have in the anglosphere.",
-  null, WINDOWWIDTH/2, 5*WINDOWHEIGHT/6, "assets/ministry_of_foreign_affairs.jpg")
+  buttons.push(new MinistryOfForeignAffairs(WINDOWWIDTH/2 + 175, 5*WINDOWHEIGHT/6, 300, 60))
 
-  buttons.push(new CentralPublicityDepartment(WINDOWWIDTH/2 - 400, 5*WINDOWHEIGHT/6, 300, 60))
+  buttons.push(new CentralPublicityDepartment(WINDOWWIDTH/2 - 175, 5*WINDOWHEIGHT/6, 300, 60))
 
-  add_info_button("State Council", 
-  "The state council controls everything.",
-  null, WINDOWWIDTH/2 + 400, 5*WINDOWHEIGHT/6, "assets/state_council.jpg")
+  buttons.push(new StateCouncil(WINDOWWIDTH/2 + 500, 5*WINDOWHEIGHT/6, 300, 60))
+  buttons.push(new ComitteeCcp(WINDOWWIDTH/2 - 500, 5*WINDOWHEIGHT/6, 300, 60))
   
 
   textAlign(CENTER, CENTER);
@@ -78,12 +78,13 @@ function mouseClicked () {
     top_button.clicked(mouseX, mouseY)
   }
 
-  // if (first_clicked == null) {
-  //   first_clicked = {x: mouseX, y: mouseY}
-  // } else {
-  //   console.log("this.expanded_box.buttons.push(new GraphButton(" + ((first_clicked.x + mouseX)/2 - 1000) + "," + ((first_clicked.y + mouseY)/2) + "," + (mouseX - first_clicked.x) + "," + (mouseY - first_clicked.y) + ", this.expanded_box))")
-  //   first_clicked = null
-  // }
+  // Dev tools
+  if (first_clicked == null) {
+    first_clicked = {x: mouseX, y: mouseY}
+  } else {
+    console.log("this.expanded_box.buttons.push(new GraphButton(" + ((first_clicked.x + mouseX)/2 - 1140) + "," + ((first_clicked.y + mouseY)/2) + "," + (mouseX - first_clicked.x) + "," + (mouseY - first_clicked.y) + ", this.expanded_box, data, this.expanded_box.buttons.length))")
+    first_clicked = null
+  }
   
 }
 

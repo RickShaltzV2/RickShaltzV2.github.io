@@ -21,31 +21,27 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
 
 
         var data = 
-            [null,
-                {region: "Anglosphere", value: "400 million"},
-            {region: "India", value: "31 million"},
-            {region: "la Francophonie", value: "29.4 million"},
-            {region: "MENA", value: "16.4 million"},
-            {region: "Pakistan", value: "15.5 million"},
-            {region: "Hispanophone", value: "11.1 million"},
-            {region: "China", value: "10.4 million"},
-            {region: "Japan", value: "8.5 million"},
-            {region: "United States", value: "6.3 million"},
-            {region: "African Union", value: "5.6 million"},
+        [null, {region: "Anglosphere",value: "436.5 million"},
+        {region: "India",value: "31.3 million"},
+        {region: "la Francophonie",value: "29.4 million"},
+        {region: "MENA",value: "16.4 million"},
+        {region: "Pakistan",value: "15.5 million"},
+        {region: "Hispanophone",value: "11.1 million"},
+        {region: "China",value: "10.4 million"},
+        {region: "Japan",value: "8.5 million"},
+        {region: "United States",value: "6.3 million"},
+        {region: "African Union",value: "5.6 million"}]
 
-            
-        ]
-
-        this.expanded_box.buttons.push(new GraphButton(271,257.5 - 120,660,25, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(85.5,296.5- 120,291,29, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(81.5,334- 120,273,28, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(37,376- 120,178,28, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(29,413.5- 120,168,25, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(12.5,450.5- 120,139,25, this.expanded_box, data,this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(11.5,489- 120,131,32, this.expanded_box,data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(7,531- 120,120,28, this.expanded_box,data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(-3.5,568.5- 120,99,25, this.expanded_box, data, this.expanded_box.buttons.length))
-        this.expanded_box.buttons.push(new GraphButton(-8.5,603.5- 110,91,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(407 - 140,153.5,435,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(188.5,189,272,24, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(185,220,263,22, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(158.5,254,210,26, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(156,283.5,205,23, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(142,318,177,28, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(138,350.5,171,27, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(124,382,143,24, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(111,415,117,30, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(106,448.5,107,27, this.expanded_box, data, this.expanded_box.buttons.length))
         
     }
 }
