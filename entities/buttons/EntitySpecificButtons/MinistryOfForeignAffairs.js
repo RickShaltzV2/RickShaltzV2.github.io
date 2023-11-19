@@ -25,7 +25,7 @@ export class MinistryOfForeignAffairs extends ButtonBoxExpansion{
             {region: "Anglosphere", value: "5.1 million"},
             {region: "Bahrain", value: "1.1 million"},
             {region: "Hong Kong", value: "853.0 K"},
-            {region: "USA", value: "652.1 K"},
+            {region: "United States", value: "652.1 K"},
             {region: "Pakistan", value: "597.1 K"},
             {region: "South Korea", value: "332.9K"},
             {region: "Myanmar", value: "263 K"},
