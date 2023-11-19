@@ -7,7 +7,7 @@ import { CloseButton } from "./CloseButton.js";
 import { GraphButton } from "./GraphButton.js";
 
 export class ExpandedBox extends Entity {
-    constructor (color, graph_img, text_label_box) {
+    constructor (color, graph_img, text_label_box, graph_explanation_text) {
         super(WINDOWWIDTH/2, - WINDOWHEIGHT/2 - 100, 9*WINDOWWIDTH/10, 9*WINDOWHEIGHT/10)
         this.color = color
 
@@ -17,16 +17,15 @@ export class ExpandedBox extends Entity {
             this.graph_img = loadImage("assets/sample_graph.png")
         }
 
-        var text = "This graph shows the regional breakdown\nof the targets of the parent entity. The values on the\nx-axis show the total number of followers of actors\nworking for these entities in any given region."
-
+        
         this.text_label_box = text_label_box;
         this.text_label_box_title = new TextLabelBox(new TextLabel(text_label_box.x, text_label_box.y - text_label_box.width / 2 - 10, "About:", 25, "Georgia", "Black"),
         "rectangle", "White", 150, 40)
-        this.graph_text_label_box_title = new TextLabelBox(new TextLabel(400, 200 - 150/2 - 10, "Graph Info:", 25, "Georgia", "Black"),
+        this.graph_text_label_box_title = new TextLabelBox(new TextLabel(400, 200 - 200/2 - 10, "Graph Analysis:", 25, "Georgia", "Black"),
         "rectangle", "White", 200, 40)
         this.graph_text_label_box = new TextLabelBox(new TextLabel(400, 200,
-            text,
-            text_label_box.textLabel.text_size, text_label_box.textLabel.font, text_label_box.textLabel.color), "rectangle", text_label_box.color, 600, 150)
+            graph_explanation_text,
+            text_label_box.textLabel.text_size, text_label_box.textLabel.font, text_label_box.textLabel.color), "rectangle", text_label_box.color, 800, 200)
 
         this.triggered = false
         this.visible = false
@@ -74,9 +73,12 @@ export class ExpandedBox extends Entity {
             this.graph_text_label_box_title.draw(0, this.x, this.y)
         }
 
-        for (var i in this.buttons) {
-            this.buttons[i].draw(this.x, this.y)
+        if (this.triggered){
+            for (var i in this.buttons) {
+                this.buttons[i].draw(this.x, this.y)
+            }
         }
+        
 
         this.title.draw(0, this.x, this.y);
 
@@ -89,6 +91,10 @@ export class ExpandedBox extends Entity {
     }
 
     clicked(x, y) {
+        if (!this.triggered) {
+            return
+        }
+
         for (var i in this.buttons) {
             this.buttons[i].clicked(x, y)
         }

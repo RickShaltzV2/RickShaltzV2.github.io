@@ -11,12 +11,13 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
         var preview_image = "assets/central_publicity_department.jpg"
         var entity_name = "Central Publicity Department"
         var text = "The Central Publicity Department is a government body that controls the media\necosystem in China. Their powers include regulating the licensing of media outlets,\nand giving instructions on what can or cannot be said by the media.\nIn other words, they ensure that the communist party’s narrative\nis well disseminated through broadcasting and social media."
+        var graph_explanation_text = ""
 
         var button_text = new TextLabel(x, y, entity_name, 20, "Arial", "black");
         var explanation_text = new TextLabelBox(new TextLabel(-400, 200, 
             text , 20, "Arial", "black"), "rectangle", "white", 800, 150);
         
-        var expanded_box = new ExpandedBox("white", graph, explanation_text)
+        var expanded_box = new ExpandedBox("white", graph, explanation_text, graph_explanation_text)
         super(button_text, "rectangloid", "white", length, width, expanded_box, preview_image)
 
 
@@ -32,7 +33,7 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
         {region: "United States",value: "6.3 million"},
         {region: "African Union",value: "5.6 million"}]
 
-        this.expanded_box.buttons.push(new GraphButton(407 - 140,153.5,435,25, this.expanded_box, data, this.expanded_box.buttons.length))
+        this.expanded_box.buttons.push(new GraphButton(313,152.5,525,21, this.expanded_box, data, this.expanded_box.buttons.length))
         this.expanded_box.buttons.push(new GraphButton(188.5,189,272,24, this.expanded_box, data, this.expanded_box.buttons.length))
         this.expanded_box.buttons.push(new GraphButton(185,220,263,22, this.expanded_box, data, this.expanded_box.buttons.length))
         this.expanded_box.buttons.push(new GraphButton(158.5,254,210,26, this.expanded_box, data, this.expanded_box.buttons.length))

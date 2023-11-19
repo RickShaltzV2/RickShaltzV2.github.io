@@ -11,12 +11,13 @@ export class MinistryOfForeignAffairs extends ButtonBoxExpansion{
         var preview_image = "assets/ministry_of_foreign_affairs.jpg"
         var entity_name = "Ministry Of Foreign Affairs"
         var text = "The Ministry of Foreign Affairs is charged with\nimplementing the foreign policy laid out by the government.\nThey also communicate the government’s narrative\nthrough their embassies and diplomats."
+        var graph_explanation_text = "The graph shows the total number of social media followers of actors\nassociated with the ministry in various regions. We can observe\nthat there is a relatively balanced spread, with two major targets being the\nAnglosphere and Bahrain. As the name suggests, this entity is more focused on\nforeign countries, as opposed to some other entities such as\nthe Central Committee of the CCP."
 
         var button_text = new TextLabel(x, y, entity_name, 20, "Arial", "black");
         var explanation_text = new TextLabelBox(new TextLabel(-400, 200, 
         text , 20, "Arial", "black"), "rectangle", "white", 600, 150);
         
-        var expanded_box = new ExpandedBox("white", graph, explanation_text)
+        var expanded_box = new ExpandedBox("white", graph, explanation_text, graph_explanation_text)
         super(button_text, "rectangloid", "white", length, width, expanded_box, preview_image)
 
 

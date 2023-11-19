@@ -22,33 +22,35 @@ window.mouseClicked = mouseClicked
 
 function setup() {
   var cnv = createCanvas(WINDOWWIDTH, WINDOWHEIGHT);
-  var x = (windowWidth - WINDOWWIDTH) / 2;
-  var y = (windowHeight - WINDOWHEIGHT) / 2;
-  cnv.position(x, y);
+  // var x = (windowWidth - WINDOWWIDTH) / 2;
+  // var y = (windowHeight - WINDOWHEIGHT) / 2;
+  // cnv.position(x, y);
 
-  var test_text = new TextLabel(WINDOWWIDTH/2, 100, "Data Interference Of Foreign Entities", 50, "Georgia", "black");
-  var test_text_box = new TextLabelBox(test_text, "rectangloid", "white");
+  logos = loadImage("assets/logos.png")
+
+  var test_text = new TextLabel(WINDOWWIDTH/2, 100, "China's Influence On Western Social Media", 50, "Helvetica", "black");
+  var test_text_box = new TextLabelBox(test_text, "rectangle", "white");
   labels.push(test_text_box)
 
-  var test_text = new TextLabel(300, 250, "Individual Foreign Influences", 30, "Georgia", "black");
-  var test_text_box = new TextLabelBox(test_text, "rectangloid", "rgb(238, 207, 65)");
-  labels.push(test_text_box)
+  var test_text = new TextLabel(300, 250, "Click below to see number of followers of\nChinese government social media accounts:", 20, "Helvetica", "black");
+  // var test_text_box = new TextLabelBox(test_text, "rectangle", "white");
+  labels.push(test_text)
 
   buttons.push(new MinistryOfForeignAffairs(300, 380, 300, 60))
   buttons.push(new CentralPublicityDepartment(300, 450, 300, 60))
   buttons.push(new StateCouncil(300, 520, 300, 60))
   buttons.push(new ComitteeCcp(300, 590, 300, 60))
 
-  var test_text = new TextLabel(WINDOWWIDTH - 300, 250, "Foreign Influencers Compared", 30, "Georgia", "black");
-  var test_text_box = new TextLabelBox(test_text, "rectangloid", "orange");
-  labels.push(test_text_box)
+  var test_text = new TextLabel(WINDOWWIDTH - 300, 250, "Click below to see follower count of\nChinese government social media accounts\ncompared:", 20, "Helvetica", "black");
+  // var test_text_box = new TextLabelBox(test_text, "rectangle", "white");
+  labels.push(test_text)
 
-  buttons.push(new ComparingToEachOther(WINDOWWIDTH - 300, 380, 300, 60))
-  buttons.push(new ComparingToForeign(WINDOWWIDTH - 300, 450, 300, 60))
+  buttons.push(new ComparingToEachOther(WINDOWWIDTH - 300, 380, 310, 60))
+  buttons.push(new ComparingToForeign(WINDOWWIDTH - 300, 450, 310, 60))
   
-  for (var i = 0; i < 20; i ++) {
-    background_rect.push(new FloatingRectangle(randint(0, WINDOWWIDTH), randint(0, WINDOWHEIGHT + 200), randint(50, 100), randint(200, 400), "rgba(255, 51, 51, 0.4)", randint(-3, -1)))
-  }
+  // for (var i = 0; i < 20; i ++) {
+  //   background_rect.push(new FloatingRectangle(randint(0, WINDOWWIDTH), randint(0, WINDOWHEIGHT + 200), randint(50, 100), randint(200, 400), "rgba(255, 51, 51, 0.4)", randint(-3, -1)))
+  // }
 
   textAlign(CENTER, CENTER);
   rectMode(CENTER, CENTER);
@@ -60,13 +62,21 @@ var labels = [];
 var background_rect = [];
 var top_button = null;
 var test_map = new WorldMap(0, 0, 0, 0)
+var logos;
 
 function draw () {
-  background("rgb(255, 153, 153)")
+  background("rgb(243, 238, 234)")
 
   for (var i  in background_rect) {
     background_rect[i].draw()
   }
+
+
+  logos.resize(0, 500)
+  // fill ("black")
+  // rect(WINDOWWIDTH/2, WINDOWHEIGHT/2, logos.width + 5, logos.height + 5)
+  image(logos, WINDOWWIDTH/2, WINDOWHEIGHT/2)
+
 
   for (var i in labels) {
     labels[i].draw()

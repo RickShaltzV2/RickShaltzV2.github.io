@@ -17,7 +17,7 @@ export class ButtonBoxExpansion extends Button {
 
     draw() {
         if (this.preview_image != null && this.contains(mouseX, mouseY)){
-            this.preview_image.resize(0, WINDOWHEIGHT/3)
+            this.preview_image.resize(0, 500)
             fill ("black")
             rect(WINDOWWIDTH/2, WINDOWHEIGHT/2, this.preview_image.width + 5, this.preview_image.height + 5)
             image(this.preview_image, WINDOWWIDTH/2, WINDOWHEIGHT/2)
