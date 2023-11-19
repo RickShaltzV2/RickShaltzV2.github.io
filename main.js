@@ -10,6 +10,7 @@ import { WINDOWWIDTH } from "./assets/windowWidth.js";
 import { MinistryOfForeignAffairs } from "./entities/buttons/EntitySpecificButtons/MinistryOfForeignAffairs.js";
 import { StateCouncil } from "./entities/buttons/EntitySpecificButtons/StateCouncil.js";
 import { ComitteeCcp } from "./entities/buttons/EntitySpecificButtons/ComitteeCcp.js";
+import { FloatingRectangle } from "./entities/BackgroundRectangle.js";
 // This will fix the module problem
 window.setup = setup;
 window.draw = draw;
@@ -24,29 +25,50 @@ function setup() {
   cnv.position(x, y);
 
   var test_text = new TextLabel(WINDOWWIDTH/2, 100, "Data Interference Of Foreign Entities", 50, "Georgia", "black");
-  test_text_box = new TextLabelBox(test_text, "rectangloid", "white");
+  var test_text_box = new TextLabelBox(test_text, "rectangloid", "white");
+  labels.push(test_text_box)
 
-  buttons.push(new MinistryOfForeignAffairs(WINDOWWIDTH/2 + 175, 5*WINDOWHEIGHT/6, 300, 60))
+  var test_text = new TextLabel(300, 250, "Individual Foreign Influences", 30, "Georgia", "black");
+  var test_text_box = new TextLabelBox(test_text, "rectangloid", "cyan");
+  labels.push(test_text_box)
 
-  buttons.push(new CentralPublicityDepartment(WINDOWWIDTH/2 - 175, 5*WINDOWHEIGHT/6, 300, 60))
+  buttons.push(new MinistryOfForeignAffairs(300, 380, 300, 60))
+  buttons.push(new CentralPublicityDepartment(300, 450, 300, 60))
+  buttons.push(new StateCouncil(300, 520, 300, 60))
+  buttons.push(new ComitteeCcp(300, 590, 300, 60))
 
-  buttons.push(new StateCouncil(WINDOWWIDTH/2 + 500, 5*WINDOWHEIGHT/6, 300, 60))
-  buttons.push(new ComitteeCcp(WINDOWWIDTH/2 - 500, 5*WINDOWHEIGHT/6, 300, 60))
+  var test_text = new TextLabel(WINDOWWIDTH - 300, 250, "Foreign Influencers Compared", 30, "Georgia", "black");
+  var test_text_box = new TextLabelBox(test_text, "rectangloid", "orange");
+  labels.push(test_text_box)
+
+  add_info_button("Against Each Other", "This is comparing it against each other", null, WINDOWWIDTH - 300, 380)
+  add_info_button("Against Domestic Influences", "This is comparing it against domestic influences like BBC and CNN", null, WINDOWWIDTH - 300, 450)
   
+  for (var i = 0; i < 20; i ++) {
+    background_rect.push(new FloatingRectangle(randint(0, WINDOWWIDTH), randint(0, WINDOWHEIGHT + 200), randint(50, 100), randint(200, 400), "rgba(255, 51, 51, 0.4)", randint(-3, -1)))
+  }
 
   textAlign(CENTER, CENTER);
   rectMode(CENTER, CENTER);
   imageMode(CENTER, CENTER)
 }
 
-var test_text_box;
 var buttons = [];
+var labels = [];
+var background_rect = [];
 var top_button = null;
 var test_map = new WorldMap(0, 0, 0, 0)
 
 function draw () {
-  background(150)
-  test_text_box.draw()
+  background("rgb(255, 153, 153)")
+
+  for (var i  in background_rect) {
+    background_rect[i].draw()
+  }
+
+  for (var i in labels) {
+    labels[i].draw()
+  }
 
   var overlap_draw = null
 
@@ -96,4 +118,8 @@ function add_info_button(entity_name, info_text, graph, x, y, preview_image) {
   , 15, "Arial", "black"), "rectangle", "white");
   buttons.push(new ButtonBoxExpansion(test_button_text, "rectangloid", "white", 300, 60, new ExpandedBox("white", graph, 
   explanation_text), preview_image))
+}
+
+function randint(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

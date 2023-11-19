@@ -25,11 +25,18 @@ export class ComitteeCcp extends ButtonBoxExpansion{
             {region: "Anglosphere",value: "62.3 million"},
             {region: "Australia",value: "1.5 million"},
             {region: "Hong Kong",value: "1.4 million"},
-            {region: "USA",value: "29.5 K"},
+            {region: "United States",value: "29.5 K"},
             {region: "Japan",value: "9.9K"},
             {region: "Xinjiang",value: "2.4K"},
             ]
-        
+
+            this.expanded_box.buttons.push(new GraphButton(311,176.5,600,25, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(284.5,221.5,545,31, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(200,264.5,378,37, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(199.5,312,375,36, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(107,360,190,40, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(77.5,406.5,131,35, this.expanded_box, data, this.expanded_box.buttons.length))
+            this.expanded_box.buttons.push(new GraphButton(49.5,452,75,38, this.expanded_box, data, this.expanded_box.buttons.length))
     
     }
 }
