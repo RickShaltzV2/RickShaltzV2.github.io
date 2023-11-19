@@ -12,6 +12,7 @@ import { StateCouncil } from "./entities/buttons/EntitySpecificButtons/StateCoun
 import { ComitteeCcp } from "./entities/buttons/EntitySpecificButtons/ComitteeCcp.js";
 import { FloatingRectangle } from "./entities/BackgroundRectangle.js";
 import { ComparingToEachOther } from "./entities/buttons/EntitySpecificButtons/ComparingToEachOther.js";
+import { ComparingToForeign } from "./entities/buttons/EntitySpecificButtons/ComparingToForeign.js";
 // This will fix the module problem
 window.setup = setup;
 window.draw = draw;
@@ -30,7 +31,7 @@ function setup() {
   labels.push(test_text_box)
 
   var test_text = new TextLabel(300, 250, "Individual Foreign Influences", 30, "Georgia", "black");
-  var test_text_box = new TextLabelBox(test_text, "rectangloid", "cyan");
+  var test_text_box = new TextLabelBox(test_text, "rectangloid", "rgb(238, 207, 65)");
   labels.push(test_text_box)
 
   buttons.push(new MinistryOfForeignAffairs(300, 380, 300, 60))
@@ -43,7 +44,7 @@ function setup() {
   labels.push(test_text_box)
 
   buttons.push(new ComparingToEachOther(WINDOWWIDTH - 300, 380, 300, 60))
-  add_info_button("Against Anglosphere Influences", "This is comparing it against domestic influences like BBC and CNN", null, WINDOWWIDTH - 300, 450)
+  buttons.push(new ComparingToForeign(WINDOWWIDTH - 300, 450, 300, 60))
   
   for (var i = 0; i < 20; i ++) {
     background_rect.push(new FloatingRectangle(randint(0, WINDOWWIDTH), randint(0, WINDOWHEIGHT + 200), randint(50, 100), randint(200, 400), "rgba(255, 51, 51, 0.4)", randint(-3, -1)))

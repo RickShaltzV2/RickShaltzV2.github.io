@@ -8,7 +8,7 @@ import { GraphButton } from "../GraphButton.js";
 export class ComparingToEachOther extends ButtonBoxExpansion{
     constructor (x, y, length, width) {
         var graph = "assets/graph_comparing_to_each_other.png";
-        var preview_image = null
+        var preview_image = "assets/preview_against_each_other.png"
         var entity_name = "Against Each Other"
         var text = "Compared to each other info here"
 
