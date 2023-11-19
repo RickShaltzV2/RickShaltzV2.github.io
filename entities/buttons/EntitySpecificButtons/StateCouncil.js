@@ -11,11 +11,11 @@ export class StateCouncil extends ButtonBoxExpansion{
         var preview_image = "assets/state_council.jpg"
         var entity_name = "State Council"
         var text = "The state council is a body that supervises the government bureaucracy,\nhence tasked with carrying out the administrative function of the state.\nThey control the Xinhua News Agency which is their primary mode of\ndisseminating the government’s narrative"
-        var graph_explanation_text = ""
+        var graph_explanation_text = "The graph shows the total number of social media followers of\nactors associated with the council in various regions.\nBy observing the graphs we can see that\nthe graph is a lot of disparities between the targeted regions.\nThe biggest targets are the Anglosphere and China, which implies that the council is\nmore balanced with regards to focusing on domestic affairs and the Anglosphere."
 
         var button_text = new TextLabel(x, y, entity_name, 20, "Arial", "black");
         var explanation_text = new TextLabelBox(new TextLabel(-400, 200, 
-            text , 20, "Arial", "black"), "rectangle", "white", 800, 150);
+            text , 20, "Arial", "black"), "rectangle", "white", 700, 150);
         
         var expanded_box = new ExpandedBox("white", graph, explanation_text, graph_explanation_text)
         super(button_text, "rectangloid", "white", length, width, expanded_box, preview_image)

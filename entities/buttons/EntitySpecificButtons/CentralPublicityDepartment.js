@@ -11,11 +11,11 @@ export class CentralPublicityDepartment extends ButtonBoxExpansion{
         var preview_image = "assets/central_publicity_department.jpg"
         var entity_name = "Central Publicity Department"
         var text = "The Central Publicity Department is a government body that controls the media\necosystem in China. Their powers include regulating the licensing of media outlets,\nand giving instructions on what can or cannot be said by the media.\nIn other words, they ensure that the communist party’s narrative\nis well disseminated through broadcasting and social media."
-        var graph_explanation_text = ""
+        var graph_explanation_text = "The graph shows the total number of social media followers of actors associated\nwith the department in various regions. It can be observed that there is a massive\ndisparity between the followers of accounts focused on the Anglosphere and other\nregions. This suggests that the department is focused heavily on targeting\nthe Anglosphere, especially considering that these actors\nhave significantly more followers than other entities"
 
         var button_text = new TextLabel(x, y, entity_name, 20, "Arial", "black");
         var explanation_text = new TextLabelBox(new TextLabel(-400, 200, 
-            text , 20, "Arial", "black"), "rectangle", "white", 800, 150);
+            text , 20, "Arial", "black"), "rectangle", "white", 750, 150);
         
         var expanded_box = new ExpandedBox("white", graph, explanation_text, graph_explanation_text)
         super(button_text, "rectangloid", "white", length, width, expanded_box, preview_image)
