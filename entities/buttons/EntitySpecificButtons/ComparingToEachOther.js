@@ -21,5 +21,7 @@ export class ComparingToEachOther extends ButtonBoxExpansion{
         super(button_text, "rectangloid", "white", length, width, expanded_box, preview_image)
 
         this.expanded_box.graph_text_label_box = null
+
+        this.expanded_box.map.set_region_focus ("Anglosphere", null)
     }
 }

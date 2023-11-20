@@ -113,12 +113,12 @@ function mouseClicked () {
   }
 
   // Dev tools
-  if (first_clicked == null) {
-    first_clicked = {x: mouseX, y: mouseY}
-  } else {
-    console.log("this.expanded_box.buttons.push(new GraphButton(" + ((first_clicked.x + mouseX)/2 - 1140) + "," + ((first_clicked.y + mouseY)/2) + "," + (mouseX - first_clicked.x) + "," + (mouseY - first_clicked.y) + ", this.expanded_box, data, this.expanded_box.buttons.length))")
-    first_clicked = null
-  }
+  // if (first_clicked == null) {
+  //   first_clicked = {x: mouseX, y: mouseY}
+  // } else {
+  //   console.log("this.expanded_box.buttons.push(new GraphButton(" + ((first_clicked.x + mouseX)/2 - 1140) + "," + ((first_clicked.y + mouseY)/2) + "," + (mouseX - first_clicked.x) + "," + (mouseY - first_clicked.y) + ", this.expanded_box, data, this.expanded_box.buttons.length))")
+  //   first_clicked = null
+  // }
   
 }
 
